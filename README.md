@@ -1,36 +1,100 @@
-![Analytics](https://github.com/vercel/analytics/blob/main/.github/banner.png)
+# AURA-RAG (AI Unified Retrieval Assistant – Retrieval-Augmented Generation)
 
-<div align="center"><strong>Vercel Web Analytics</strong></div>
-<div align="center">Privacy-friendly, real-time traffic insights</div>
-<br />
-<div align="center">
-<a href="https://vercel.com/analytics">Website</a>
-<span> · </span>
-<a href="https://vercel.com/docs/concepts/analytics/package">Documentation</a>
-<span> · </span>
-<a href="https://twitter.com/vercel">Twitter</a>
-</div>
+Aura RAG is an AI-powered PDF Intelligence platform that allows users to upload PDF documents, ask natural language questions, and receive context-aware answers generated using Retrieval-Augmented Generation (RAG).
 
-## Overview
+## 🚀 Live Demo
 
-`@vercel/analytics` allows you to track page views and custom events in your Next.js app or any other website that is deployed to Vercel.
+https://aura-rag-classy-pdf-intelligence.vercel.app/
 
-All page views are automatically tracked in your app.
+---
 
-This package does **not** track data in development mode.
+## ✨ Features
 
-## Quickstart
+* 📄 Upload and analyze PDF documents
+* 🤖 AI-powered question answering
+* 🔍 Retrieval-Augmented Generation (RAG)
+* ⚡ Fast document search and retrieval
+* 🧠 NVIDIA AI & Google Gemini support
+* 🎨 Modern responsive UI
+* 🌙 Clean and professional interface
 
-1. Enable Vercel Web Analytics for a project in the [Vercel Dashboard](https://vercel.com/dashboard).
-2. Add the `@vercel/analytics` package to your project
-3. Inject the Analytics script to your app
+---
 
-   - If you are using **Next.js** or **React**, you can use the `<Analytics />` component to inject the script into your app.
-   - To add the tracking script for other frameworks, use the `inject` function.
-   - If you want to use Vercel Web Analytics on a static site without npm, follow the instructions in the [documentation](https://vercel.com/docs/analytics/quickstart).
+## 🛠️ Tech Stack
 
-4. Deploy your app to Vercel and see data flowing in.
+* React
+* TypeScript
+* Vite
+* PDF.js
+* NVIDIA API
+* Google Gemini API
+* Vercel
 
-## Documentation
+---
 
-Find more details about this package in our [documentation](https://vercel.com/docs/analytics/quickstart).
+## 📂 Project Structure
+
+```
+src/
+ ├── components/
+ ├── ChatArea.tsx
+ ├── Sidebar.tsx
+ ├── DocPanel.tsx
+ ├── LoginScreen.tsx
+ ├── ragEngine.ts
+ ├── pdfParser.ts
+ ├── emailService.ts
+ ├── db.ts
+ ├── App.tsx
+ └── main.tsx
+```
+
+---
+
+## ⚙️ Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/Aura-RAG-Classy-PDF-Intelligence.git
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create a `.env` file:
+
+```env
+VITE_DEFAULT_PROVIDER=nvidia
+VITE_NVIDIA_API_KEY=YOUR_API_KEY
+VITE_GEMINI_API_KEY=YOUR_API_KEY
+```
+
+Run locally:
+
+```bash
+npm run dev
+```
+
+---
+
+## 📸 Screenshots
+
+<img width="1914" height="892" alt="Screenshot 2026-06-26 192332" src="https://github.com/user-attachments/assets/492ec106-2171-4964-9b7b-414f01cbe794" />
+<img width="1918" height="882" alt="Screenshot 2026-06-26 192600" src="https://github.com/user-attachments/assets/cbd226d2-32c8-4d77-b650-2c1d3f0d7940" />
+<img width="1917" height="901" alt="Screenshot 2026-06-26 192729" src="https://github.com/user-attachments/assets/5a7c517b-edb1-4520-976a-4dbbc43bb1c4" />
+<img width="1916" height="899" alt="Screenshot 2026-06-26 192742" src="https://github.com/user-attachments/assets/de0f1ca2-f44c-4e74-93a0-14d14b836d69" />
+
+
+---
+
+## 📜 License
+
+This project is available for educational and portfolio purposes.
+
+---
+
+Developed by **Siddardha Koduri**
