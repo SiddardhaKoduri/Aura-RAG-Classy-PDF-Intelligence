@@ -1,0 +1,24 @@
+{
+  "rewrites": [
+    {
+      "source": "/api-nvidia/:path*",
+      "destination": "https://integrate.api.nvidia.com/:path*"
+    },
+    {
+      "source": "/api-gemini/:path*",
+      "destination": "https://generativelanguage.googleapis.com/:path*"
+    },
+    {
+      "source": "/api-brevo/:path*",
+      "destination": "https://api.brevo.com/:path*"
+    },
+    {
+      "source": "/api-resend/:path*",
+      "destination": "https://api.resend.com/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

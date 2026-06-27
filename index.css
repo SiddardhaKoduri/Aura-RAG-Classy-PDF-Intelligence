@@ -1,0 +1,600 @@
+/* Aura RAG - Glowing Glass on Black Background Design System */
+
+:root {
+  /* Colors & Transparency (Optimized for pure black contrast) */
+  --bg-primary: rgba(10, 10, 12, 0.2);
+  --bg-secondary: rgba(15, 15, 18, 0.3);
+  --bg-tertiary: rgba(20, 20, 25, 0.4);
+  
+  /* Pure Glass specs (Frosted glass effect) */
+  --bg-glass: rgba(255, 255, 255, 0.04);
+  --bg-glass-hover: rgba(255, 255, 255, 0.08);
+  --bg-sidebar-glass: rgba(10, 10, 12, 0.55); /* Darker glass for contrast against pure black */
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --border-glass-focus: rgba(255, 255, 255, 0.2);
+  
+  /* Text styling (Legible silver-white) */
+  --text-primary: #F5F5F7;
+  --text-secondary: #8E8E93;
+  --text-muted: #515154;
+  
+  /* Accents */
+  --color-primary: #0071E3; /* Apple Blue */
+  --color-primary-glass: rgba(0, 113, 227, 0.25);
+  --color-primary-glass-border: rgba(0, 113, 227, 0.45);
+  
+  --color-success: #30D158;
+  --color-warning: #FF9F0A;
+  --color-danger: #FF453A;
+  
+  --font-sans: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  
+  /* visionOS Shadows & Edge Glows */
+  --shadow-window: 0 30px 70px rgba(0, 0, 0, 0.8);
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.015);
+  
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.2s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #000000;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  overflow: hidden;
+  height: 100vh;
+  height: 100dvh;
+  width: 100vw;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Thin Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Solid pure black background so glassy elements stand out and glow */
+.app-layout {
+  display: flex;
+  height: 100vh;
+  height: 100dvh;
+  width: 100vw;
+  background-color: #000000;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Pure Glass Sidebar */
+.sidebar {
+  width: 300px;
+  min-width: 300px;
+  background: var(--bg-sidebar-glass);
+  border-right: 1px solid var(--border-glass);
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(35px) saturate(180%);
+  -webkit-backdrop-filter: blur(35px) saturate(180%);
+  position: relative;
+  z-index: 10;
+  transition: var(--transition-smooth);
+}
+
+/* Main Area Layout */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background: transparent;
+}
+
+/* Chat container transparent, displaying background wallpaper */
+.chat-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: transparent;
+  border-right: 1px solid var(--border-glass);
+}
+
+.chat-header {
+  flex-shrink: 0;
+}
+
+.chat-input-area {
+  flex-shrink: 0;
+}
+
+/* Pure Glass Document Panel */
+.doc-panel {
+  width: 340px;
+  min-width: 340px;
+  background: var(--bg-sidebar-glass);
+  border-left: 1px solid var(--border-glass);
+  backdrop-filter: blur(35px) saturate(180%);
+  -webkit-backdrop-filter: blur(35px) saturate(180%);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Floating Glass Cards */
+.glass-card {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  backdrop-filter: blur(25px) saturate(140%);
+  -webkit-backdrop-filter: blur(25px) saturate(140%);
+  border-radius: var(--radius-md);
+  transition: var(--transition-smooth);
+  box-shadow: var(--shadow-card);
+}
+
+.glass-card:hover {
+  background: var(--bg-glass-hover);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7), 0 0 12px rgba(255, 255, 255, 0.03);
+  transform: translateY(-1px);
+}
+
+/* Classy Glass Buttons */
+.btn-primary {
+  background: var(--color-primary-glass);
+  color: #FFFFFF;
+  border: 1px solid var(--color-primary-glass-border);
+  padding: 10px 18px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  backdrop-filter: blur(10px);
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 15px rgba(0, 113, 227, 0.15);
+  font-size: 13px;
+}
+
+.btn-primary:hover {
+  background: rgba(0, 113, 227, 0.38);
+  border-color: rgba(0, 113, 227, 0.6);
+  box-shadow: 0 6px 20px rgba(0, 113, 227, 0.25), 0 0 10px rgba(0, 113, 227, 0.2);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-primary);
+  border: 1px solid var(--border-glass);
+  padding: 10px 18px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  backdrop-filter: blur(10px);
+  transition: var(--transition-smooth);
+  font-size: 13px;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.btn-icon {
+  background: transparent;
+  color: var(--text-secondary);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.btn-icon:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+}
+
+/* Glass inputs (Minimal floating blur text inputs) */
+.glass-input {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-glass);
+  color: var(--text-primary);
+  padding: 11px 15px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  outline: none;
+  backdrop-filter: blur(15px);
+  transition: var(--transition-smooth);
+  width: 100%;
+}
+
+.glass-input:focus {
+  border-color: var(--border-glass-focus);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.04);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { border-color: rgba(255, 255, 255, 0.08); }
+  50% { border-color: rgba(255, 255, 255, 0.18); }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s infinite ease-in-out;
+}
+
+/* Chat bubble styling: Minimal glassmorphic bubbles */
+.message-bubble {
+  max-width: 75%;
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  line-height: 1.55;
+  font-size: 14px;
+  word-break: break-word;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+}
+
+.message-bubble.user {
+  background: linear-gradient(135deg, rgba(0, 113, 227, 0.35) 0%, rgba(0, 113, 227, 0.15) 100%);
+  border: 1px solid rgba(0, 113, 227, 0.45);
+  color: #FFFFFF;
+  border-bottom-right-radius: 4px;
+  align-self: flex-end;
+  box-shadow: 
+    0 8px 32px rgba(0, 113, 227, 0.25), 
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 0 10px rgba(0, 113, 227, 0.1);
+}
+
+.message-bubble.assistant {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.015) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text-primary);
+  border-bottom-left-radius: 4px;
+  align-self: flex-start;
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.65), 
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    0 0 12px rgba(255, 255, 255, 0.02);
+}
+
+/* Source badge citations (Frosted mini pill) */
+.citation-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #E2E2E7;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 6px;
+  margin: 0 4px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+.citation-link:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  transform: translateY(-0.5px);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
+}
+
+/* Drag & Drop Area */
+.drag-drop-zone {
+  border: 1px dashed rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 24px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  background: rgba(255, 255, 255, 0.01);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.drag-drop-zone.active {
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.drag-drop-zone:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* Source Viewer highlighted block */
+.source-highlight-block {
+  padding: 10px 12px;
+  border-left: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.01);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  transition: var(--transition-smooth);
+}
+
+.source-highlight-block:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* Typing Indicator Animation */
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+}
+
+.typing-dot {
+  width: 5px;
+  height: 5px;
+  background-color: var(--text-secondary);
+  border-radius: 50%;
+  animation: typingBounce 1.4s infinite ease-in-out both;
+}
+
+.typing-dot:nth-child(1) { animation-delay: -0.32s; }
+.typing-dot:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes typingBounce {
+  0%, 80%, 100% { transform: scale(0); }
+  40% { transform: scale(1.0); }
+}
+
+/* Typography styles for Markdown */
+.markdown-body h1, .markdown-body h2, .markdown-body h3 {
+  margin-top: 14px;
+  margin-bottom: 6px;
+  font-family: var(--font-sans);
+  color: #FFFFFF;
+  font-weight: 600;
+}
+.markdown-body h1 { font-size: 1.3em; }
+.markdown-body h2 { font-size: 1.15em; }
+.markdown-body h3 { font-size: 1.05em; }
+.markdown-body p {
+  margin-bottom: 8px;
+}
+.markdown-body p:last-child {
+  margin-bottom: 0;
+}
+.markdown-body ul, .markdown-body ol {
+  margin-left: 18px;
+  margin-bottom: 8px;
+}
+.markdown-body li {
+  margin-bottom: 3px;
+}
+.markdown-body code {
+  font-family: var(--font-mono);
+  background: rgba(255, 255, 255, 0.07);
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  color: #E2E2E7;
+}
+.markdown-body pre {
+  background: rgba(0, 0, 0, 0.25);
+  padding: 10px;
+  border-radius: var(--radius-sm);
+  overflow-x: auto;
+  margin: 8px 0;
+  border: 1px solid var(--border-glass);
+}
+.markdown-body pre code {
+  background: transparent;
+  padding: 0;
+  color: #E2E2E7;
+}
+.markdown-body blockquote {
+  border-left: 2px solid rgba(255, 255, 255, 0.25);
+  padding-left: 10px;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin: 8px 0;
+}
+.markdown-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+}
+.markdown-body th, .markdown-body td {
+  border: 1px solid var(--border-glass);
+  padding: 6px 10px;
+  text-align: left;
+  font-size: 13px;
+}
+.markdown-body th {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* --- Responsive Layout & Mobile Drawer Overrides --- */
+
+.mobile-only-toggle {
+  display: none !important;
+}
+
+.mobile-only-btn {
+  display: none !important;
+}
+
+.mobile-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 95;
+  transition: var(--transition-smooth);
+}
+
+/* Tablet & Mobile Screens */
+@media (max-width: 1024px) {
+  .sidebar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 290px;
+    min-width: 290px;
+    z-index: 100 !important;
+    transform: translateX(-100%);
+    box-shadow: 15px 0 45px rgba(0, 0, 0, 0.85);
+    background: rgba(10, 10, 12, 0.95) !important; /* Solider black glass for mobile overlays */
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .doc-panel {
+    position: fixed !important;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 330px;
+    min-width: 330px;
+    z-index: 100 !important;
+    transform: translateX(100%);
+    box-shadow: -15px 0 45px rgba(0, 0, 0, 0.85);
+    background: rgba(10, 10, 12, 0.95) !important;
+  }
+
+  .doc-panel.open {
+    transform: translateX(0);
+  }
+
+  .chat-container {
+    border-right: none !important;
+  }
+
+  .mobile-only-toggle {
+    display: flex !important;
+  }
+
+  .mobile-only-btn {
+    display: flex !important;
+  }
+
+  .desktop-only-icon {
+    display: none !important;
+  }
+
+  .desktop-only-btn {
+    display: none !important;
+  }
+
+  .message-bubble {
+    max-width: 88% !important;
+  }
+}
+
+/* Small Smart Phone Screens */
+@media (max-width: 480px) {
+  .sidebar {
+    width: 82vw !important;
+    min-width: 82vw !important;
+  }
+
+  .doc-panel {
+    width: 100vw !important;
+    min-width: 100vw !important;
+    border-left: none !important;
+  }
+
+  .chat-header {
+    padding: 0 16px !important;
+  }
+
+  .message-bubble {
+    max-width: 94% !important;
+    padding: 10px 14px !important;
+    font-size: 13px !important;
+  }
+
+  .chat-input-area {
+    padding: 12px 16px 16px 16px !important;
+  }
+
+  .chat-container div[style*="padding: 24px"] {
+    padding: 16px !important;
+  }
+}
+
+/* iOS/Safari Smooth Momentum Scrolling Overrides */
+.sidebar-session-list,
+.message-feed,
+.doc-panel-content {
+  -webkit-overflow-scrolling: touch;
+}
+
